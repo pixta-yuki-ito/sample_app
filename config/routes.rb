@@ -1,9 +1,17 @@
 SampleApp::Application.routes.draw do
-  get "static_page/home"
-  get "static_page/help"
-  get "static_page/about"
-  get "static_page/contact"
-  # The priority is based upon order of creation: first created -> highest priority.
+#  get "static_page/home"
+#  get "static_page/help"
+#  get "static_page/about"
+#  get "static_page/contact"
+#  get "static_page/signup"
+
+	root 'static_page#home'
+	match '/help', to: 'static_page#help', via: 'get'
+	match '/about', to: 'static_page#about', via: 'get'
+	match '/contact', to: 'static_page#contact', via: 'get'
+	match '/signup', to: 'users#new', via: 'get'
+
+	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
